@@ -1,0 +1,48 @@
+# BetterEcoCommands
+# Developed by Mantice
+
+# Discord: https://discord.deopping.dev
+
+# MiniMessage help: https://docs.adventure.kyori.net/minimessage/
+# PlaceholderAPI placeholders are allowed in any message!
+
+prefix: "<bold><dark_gray>BEC |<reset>"
+
+info:
+  - "  <bold><dark_gray>BetterEcoCommands"
+  - "  Developed by Mantice"
+  - "  Version: {VERSION}"
+  - ""
+  - "  <click:OPEN_URL:https://discord.deopping.dev>Need help? Click here to join the Discord!</click>"
+
+help:
+  - "  <bold><dark_gray>BetterEcoCommands <reset>Help"
+  - "  Commands:"
+  - "  <bold><dark_gray>| <reset>/bec <gray>- <italic>Shows plugin information!"
+  - "  <bold><dark_gray>| <reset>/bec help <gray>- <italic>Shows this information!"
+  - "  <bold><dark_gray>| <reset>/bec reload <gray>- <italic>Reloads configuration files!"
+  - "  <bold><dark_gray>| <reset>/bec <set/give/take> <player> <amount> (-s) <gray>- <italic>Manipulate a player's balance!"
+  - ""
+  - "  <click:OPEN_URL:https://discord.deopping.dev>Need help? Click here to join the Discord!</click>"
+
+reload: "{PREFIX} <green>Configuration files reloaded!"
+
+no-permission: "{PREFIX} <red>No permission!"
+invalid-player: "{PREFIX} <red>Invalid player!"
+invalid-amount: "{PREFIX} <red>Invalid amount!"
+
+set: "{PREFIX} <green>Set <white>{PLAYER}'s <green>balance to ${AMOUNT}!"
+give: "{PREFIX} <green>Gave <white>{PLAYER} <green>${AMOUNT}!"
+take: "{PREFIX} <green>Took ${AMOUNT} from <white>{PLAYER}<green>!"
+
+# Disable notifying players by adding '-s' to the end of your command!
+# Example: '/bec take <player> <amount> -s'
+# NOTE: You can use {PLAYER} in these messages to state who manipulated the balance!
+notifications:
+  set: "{PREFIX} <green>Your balance has been set to ${AMOUNT}!"
+  given: "{PREFIX} <green>+ ${AMOUNT}"
+  taken: "{PREFIX} <red>- <green>${AMOUNT}"
+
+syntax:
+  select-player: "{PREFIX} <red>Please select a player!"
+  select-amount: "{PREFIX} <red>Please select an amount!"

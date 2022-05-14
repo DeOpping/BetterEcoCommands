@@ -1,4 +1,4 @@
-package dev.paracausal.voidranks.utilities.configurations.updater;
+package dev.deopping.betterecocommands.utilities.configurations.updater;
 
 import org.bukkit.configuration.file.FileConfiguration;
 

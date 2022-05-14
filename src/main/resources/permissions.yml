@@ -1,0 +1,10 @@
+# BetterEcoCommands
+# Developed by Mantice
+
+info: bec.info
+help: bec.help
+reload: bec.reload
+
+set: bec.set
+give: bec.give
+take: bec.take

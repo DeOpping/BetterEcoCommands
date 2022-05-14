@@ -1,7 +1,7 @@
-package dev.paracausal.voidranks.utilities;
+package dev.deopping.betterecocommands.utilities;
 
-import dev.paracausal.voidranks.Core;
-import dev.paracausal.voidranks.utilities.configurations.ConfigManager;
+import dev.deopping.betterecocommands.Core;
+import dev.deopping.betterecocommands.utilities.configurations.ConfigManager;
 import org.bukkit.entity.Player;
 
 public class PermissionManager {

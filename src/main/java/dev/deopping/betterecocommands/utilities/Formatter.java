@@ -1,15 +1,12 @@
-package dev.paracausal.voidranks.utilities;
+package dev.deopping.betterecocommands.utilities;
 
-import dev.paracausal.voidranks.Core;
-import dev.paracausal.voidranks.utilities.configurations.ConfigManager;
+import dev.deopping.betterecocommands.Core;
+import dev.deopping.betterecocommands.utilities.configurations.ConfigManager;
 import me.clip.placeholderapi.PlaceholderAPI;
 import net.kyori.adventure.audience.Audience;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
-import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
-
-import java.math.BigDecimal;
 
 public class Formatter {
 
@@ -19,14 +16,6 @@ public class Formatter {
     public Formatter(Core core) {
         this.core = core;
         this.messagesYml = core.getMessagesYml();
-    }
-
-    public Component format(String string) {
-        var miniMessage = MiniMessage.miniMessage();
-        string = string.replace("{PREFIX}", messagesYml.getConfig().getString("prefix"));
-        string = string.replace("{VERSION}", core.getDescription().getVersion());
-
-        return miniMessage.deserialize(string);
     }
 
     public Component format(String string, Player player) {
@@ -52,9 +41,22 @@ public class Formatter {
         }
     }
 
-    public void sendString(Player player, String string) {
+    public void sendMessage(Player player, String location, String replace1, String replacement1, String replace2, String replacement2) {
+        Object value = messagesYml.getConfig().get(location);
         Audience audience = (Audience) player;
-        audience.sendMessage(this.format(string, player));
+
+        if (value instanceof String) {
+            String message = value.toString().replace(replace1, replacement1);
+            message = message.replace(replace2, replacement2);
+            audience.sendMessage(this.format(message, player));
+            return;
+        }
+
+        for (String message : messagesYml.getConfig().getStringList(location)) {
+            message = message.replace(replace1, replacement1);
+            message = message.replace(replace2, replacement2);
+            audience.sendMessage(this.format(message, player));
+        }
     }
 
 }

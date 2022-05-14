@@ -1,19 +1,46 @@
 plugins {
     id 'java'
+    id 'net.minecrell.plugin-yml.bukkit' version '0.5.1'
 }
 
 group 'dev.deopping'
-version '1.0-SNAPSHOT'
+version '1.0.0'
 
 repositories {
+    maven {
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+        content {
+            includeGroup 'org.bukkit'
+            includeGroup 'org.spigotmc'
+        }
+    }
+
+    maven { url = 'https://oss.sonatype.org/content/repositories/snapshots' }
+    maven { url = 'https://oss.sonatype.org/content/repositories/central' }
+    maven { url = 'https://repo.extendedclip.com/content/repositories/placeholderapi/'}
+    maven { url = 'https://jitpack.io' }
+    mavenLocal()
     mavenCentral()
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    compileOnly 'org.spigotmc:spigot-api:1.8-R0.1-SNAPSHOT'
+    compileOnly 'org.spigotmc:spigot-api:1.14-R0.1-SNAPSHOT'
+    compileOnly 'com.github.MilkBowl:VaultAPI:1.7'
+    compileOnly 'me.clip:placeholderapi:2.11.1'
+    implementation "net.kyori:adventure-text-minimessage:4.10.1"
 }
 
-test {
-    useJUnitPlatform()
+bukkit {
+    main = 'dev.deopping.betterecocommands.Core'
+    authors = ['Mantice']
+    description = 'Manipulate the Vault economy without notifying the player!'
+    apiVersion = '1.13'
+    softDepend = ['Vault', 'PlaceholderAPI']
+    commands {
+        betterecocommands {
+            aliases = ['bec']
+            description = 'Main plugin command!'
+        }
+    }
 }

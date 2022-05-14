@@ -1,4 +1,4 @@
-package dev.paracausal.voidranks.utilities.configurations.updater;
+package dev.deopping.betterecocommands.utilities.configurations.updater;
 
 import com.google.common.base.Preconditions;
 import org.bukkit.Bukkit;

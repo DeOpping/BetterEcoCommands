@@ -1,7 +1,7 @@
-package dev.paracausal.voidranks.utilities;
+package dev.deopping.betterecocommands.utilities;
 
-import dev.paracausal.voidranks.Core;
-import dev.paracausal.voidranks.utilities.configurations.ConfigManager;
+import dev.deopping.betterecocommands.Core;
+import dev.deopping.betterecocommands.utilities.configurations.ConfigManager;
 
 public class Debugger {
 
@@ -15,7 +15,7 @@ public class Debugger {
 
     public void debug(String string) {
         if (configYml.getConfig().getBoolean("debug-mode"))
-            core.getServer().getLogger().info("[VoidRanks] " + string);
+            core.getServer().getLogger().info("[BetterEcoCommands] " + string);
     }
 
 }

@@ -1,7 +1,7 @@
-package dev.paracausal.voidranks.utilities.configurations;
+package dev.deopping.betterecocommands.utilities.configurations;
 
-import dev.paracausal.voidranks.Core;
-import dev.paracausal.voidranks.utilities.configurations.updater.ConfigUpdater;
+import dev.deopping.betterecocommands.Core;
+import dev.deopping.betterecocommands.utilities.configurations.updater.ConfigUpdater;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
